@@ -1,0 +1,319 @@
+
+@import "../../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../../node_modules/uikit/src/scss/mixins-theme.scss";
+
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
+
+// @import url(https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@600&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@800&display=swap');
+
+a:hover
+{
+    color: unset;
+    text-decoration: unset;
+}
+.uk-navbar-nav_override > li > a
+{
+    color: black;
+    text-decoration: none;
+}
+.uk-navbar-nav_override > li.uk-active > a
+{
+    color: #0EA5E9;
+    text-decoration: none;
+}
+
+#content.site-content
+{
+    overflow-x: hidden;
+}
+
+
+@media (min-width: 600px) and (max-width: 781px)
+{
+    .wp-block-column:nth-child(2n) {
+        margin-left: unset;
+    }
+}
+
+/**========================================================================
+ *  SECTIONS:
+ *  1. Variables
+ *  2. Base Structure
+ *  3. Image Frames
+ *  4. Images
+ *  5. Animations
+ *========================================================================**/
+
+ 
+/**========================================================================
+    1. Variables
+ *========================================================================**/
+ :root {
+    /* Spacer Variables */
+    --gallery_sp: 4.8vw;
+
+    /* Size Variables */
+    --img_1_w: 53.333vw;
+    --img_2_w: 48vw;
+    --img_3_w: 28.8vw;
+    --img_4_w: var(--img_3_w);
+    --img_5_w: 37.6vw;
+    --img_6_w: var(--img_5_w);
+    --img_7_w: var(--img_3_w);
+    --img_8_w: var(--img_1_w);
+    --img_9_w: var(--img_5_w);
+    --img_10_w: var(--img_2_w);
+    --img_11_w: var(--img_5_w);
+    --img_12_w: var(--img_3_w);
+
+    /* Position Left Variables */
+    --img_1_l: calc( var(--img_6_w) + var(--gallery_sp) );
+    --img_2_l: calc( var(--img_1_l) + var(--img_1_w) + var(--gallery_sp) );
+    --img_3_l: calc( var(--img_2_l) + var(--img_2_w) - (var(--gallery_sp) * 2) );
+    --img_4_l: calc( var(--img_6_w) - var(--img_4_w) + (var(--gallery_sp) * 2) );
+    --img_5_l: calc( var(--img_2_l) + var(--img_2_w) + var(--gallery_sp) );
+    --img_6_l: 0;
+    --img_7_l:  var(--img_4_l);
+    --img_8_l:  var(--img_1_l);
+    --img_9_l:  var(--img_6_l);
+    --img_10_l: var(--img_2_l);
+    --img_11_l: var(--img_5_l);
+    --img_12_l: var(--img_3_l);
+
+    /* Position Top Variables */
+    --img_1_t: calc( var(--img_4_w) + var(--img_6_w) + var(--gallery_sp) - var(--img_1_w) );
+    --img_2_t: min(6.666vw, 72px);
+    --img_3_t: calc( var(--img_5_w) + var(--gallery_sp) );
+    --img_4_t: 0;
+    --img_5_t: min(1.0666vw, 10px);
+    --img_6_t:  calc( var(--img_4_w) + var(--gallery_sp) );
+    --img_7_t:  var(--img_4_t);
+    --img_8_t:  var(--img_1_t);
+    --img_9_t:  var(--img_6_t);
+    --img_10_t: var(--img_2_t);
+    --img_11_t: var(--img_5_t);
+    --img_12_t: var(--img_3_t);
+
+    @screen md {
+        --gallery_sp: min(2.3774vw, 32px);
+
+        --img_1_w: min(38.0386vw, 585px);
+        --img_2_w: min(34.0267vw, 524px);
+        --img_3_w: min(20.579vw, 314px);
+        --img_5_w: min(24.665vw, 410px);
+    }
+
+}
+
+
+/**========================================================================
+    2. Base Structure
+ *========================================================================**/
+.gallery {
+    &__pane {
+        
+    }
+
+    &__scroller {
+        @apply relative flex whitespace-nowrap;
+        width:fit-content;
+        height: calc( var(--img_4_w) + var(--img_6_w) + var(--gallery_sp) );
+    }
+
+    &__set-1,
+    &__set-2 {
+        @apply relative h-full;
+        
+    }
+    
+    &__set-2 {
+        margin-left: calc( var(--gallery_sp) * -1 );
+    }
+
+    /* Set widths based on number of images */
+    &__set-1 .spacing-shim {
+        
+        /* 4 images */
+        &:nth-child(5){ width: calc( var(--img_6_w) + var(--img_1_w) + var(--img_2_w) + var(--img_3_w)); }
+        
+        /* 5 or 6 images */
+        &:nth-child(6),
+        &:nth-child(7) { width: calc( var(--img_6_w) + var(--img_1_w) + var(--img_2_w) + var(--img_5_w) + (var(--gallery_sp) * 3 )); }
+    }
+
+    &__set-2 .spacing-shim {
+        
+        /* 1 image (7 images total) */
+        &:nth-child(2){ width: var(--img_9_w); }
+        
+        /* 2-3 images (8-9 images total) */
+        &:nth-child(3),
+        &:nth-child(4) { width: calc( var(--img_9_w) + var(--img_8_w) + var(--gallery_sp) ); }
+        
+        /* 4 images (10 images total) */
+        &:nth-child(5){ width: calc( var(--img_9_w) + var(--img_8_w) + var(--img_10_w) + (var(--gallery_sp) * 2) ); }
+
+        /* 5-6 images (11-12 images total) */
+        &:nth-child(6),
+        &:nth-child(7){ width: calc( var(--img_9_w) + var(--img_8_w) + var(--img_10_w) + var(--img_11_w) + (var(--gallery_sp) * 3) ); }
+    }
+    
+}
+
+
+/**========================================================================
+    3. Image Frames
+ *========================================================================**/
+ .gallery {
+
+    /* Image Containers */
+    &__img-frame {
+        position: absolute;
+        display: flex;
+
+
+        /* Sizes */
+        &--1 {width: var(--img_1_w); height: var(--img_1_w)}
+        &--2 {width: var(--img_2_w); height: var(--img_2_w)}
+        &--3 {width: var(--img_3_w); height: var(--img_3_w)}
+        &--4 {width: var(--img_4_w); height: var(--img_4_w)}
+        &--5 {width: var(--img_5_w); height: var(--img_5_w)}
+        &--6 {width: var(--img_6_w); height: var(--img_6_w)}
+        &--7 {width: var(--img_7_w); height: var(--img_7_w)}
+        &--8 {width: var(--img_8_w); height: var(--img_8_w)}
+        &--9 {width: var(--img_9_w); height: var(--img_9_w)}
+        &--10 {width: var(--img_10_w); height: var(--img_10_w)}
+        &--11 {width: var(--img_11_w); height: var(--img_11_w)}
+        &--12 {width: var(--img_12_w); height: var(--img_12_w)}
+
+        /* Positioning */
+        &--1 {  left: var(--img_1_l); top: var(--img_1_t);}
+        &--2 {  left: var(--img_2_l); top: var(--img_2_t);}
+        &--3 {  left: var(--img_3_l); top: var(--img_3_t);}
+        &--4 {  left: var(--img_4_l); top: var(--img_4_t);}
+        &--5 {  left: var(--img_5_l); top: var(--img_5_t);}
+        &--6 {  left: var(--img_6_l); top: var(--img_6_t);}
+        &--7 {  left: var(--img_7_l); top: var(--img_7_t);}
+        &--8 {  left: var(--img_8_l); top: var(--img_8_t);}
+        &--9 {  left: var(--img_9_l); top: var(--img_9_t);}
+        &--10 { left: var(--img_10_l); top: var(--img_10_t);}
+        &--11 { left: var(--img_11_l); top: var(--img_11_t);}
+        &--12 { left: var(--img_12_l); top: var(--img_12_t);}
+
+        /* Alignments */
+        &--1,
+        &--2,
+        &--8,
+        &--10 {
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--3,
+        &--12 {
+            align-items: start;
+            justify-content: start;
+        }
+
+        &--4,
+        &--7 {
+            align-items: end;
+            justify-content: end;
+        }
+
+        &--5,
+        &--11 {
+            align-items: end;
+            justify-content: start;
+        }
+
+        &--6,
+        &--9 {
+            align-items: start;
+            justify-content: end;
+        }
+        
+        /* Z-index */
+        &--3,
+        &--4,
+        &--7,
+        &--12 {  
+            @apply z-10;
+        }
+        
+        /* Drop Shadows */
+        &--2,
+        &--5,
+        &--10,
+        &--11 {
+            @apply drop-shadow-lg;
+        }
+
+        &--1,
+        &--8 {
+            @apply drop-shadow-xl;
+        }
+
+        &--3,
+        &--4,
+        &--6,
+        &--7,
+        &--9,
+        &--12 {
+            @apply drop-shadow-2xl;
+        }
+    }
+ }
+
+
+/**========================================================================
+    4. Images
+*========================================================================**/
+.gallery {
+    &__img {
+        @apply rounded-sm md:rounded-md max-w-none;
+    }
+}
+
+
+/**========================================================================
+    5. Animations
+*========================================================================**/
+.gallery__scroller {
+    animation: gallery-marquee 17s linear infinite; 
+}
+
+.gallery__img-frame {
+    &--3,
+    &--4,
+    &--6,
+    &--7,
+    &--9,
+    &--12 {
+        img {
+            animation-name: floating-image;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease-in-out;
+            animation-duration: 6s;
+        }
+    }
+
+    &--6 img {animation-delay: -2s;}
+    &--3 img {animation-delay: -1s; animation-duration: 4s;}
+    &--7 img {animation-delay: -4s;}
+    &--11 img {animation-delay: -2.5s; animation-duration: 4s;}
+    &--12 img {animation-delay: -1.5s;}
+}
+
+@keyframes gallery-marquee { 
+    0% { transform: translate3d(0, 0, 0); } 
+    100% { transform: translate3d(-50%, 0, 0); } 
+}
+
+@keyframes floating-image {
+    0% {transform: translate3d(0, -5%, 0);}
+    100% {transform: translate3d(0, 5%, -100%);}
+}
