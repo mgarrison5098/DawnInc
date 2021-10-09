@@ -31,7 +31,10 @@ module.exports = {
             },
         },
         extend: {
-            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme))
+            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
+            backdropBlur: {
+                xs: '2.5px',
+             }
         },
         screens: {
             'xs': '300px',

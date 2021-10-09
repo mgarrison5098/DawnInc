@@ -27,7 +27,8 @@
 				<div class="bg-dawn text-white font-bold uppercase flex items-center justify-center h-full p-3 ml-4 hover:bg-dawn-600 cursor-pointer"><span>Subcontractors</span></div>
 			</div>
 		</nav>
-		<nav class="uk-navbar-container px-5" uk-navbar style="background-color: white">
+		<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: 200">
+		<nav class="uk-navbar-container px-5 shadow-lg" uk-navbar style="background-color: white">
             <div class="flex flex-1 items-center">
 				<?php if( get_theme_mod( 'themeslug_logo') ) : ?>
 				<div class="uk-navbar-item uk-logo">
@@ -92,10 +93,10 @@
 
             </div>
         </nav>
-		
+		</div>
 		<div id="offcanvas-slide" uk-offcanvas="flip: true; overlay: true">
 			<div class="uk-offcanvas-bar" style="background: white; padding:0">
-				<div class="bg-dawn text-white font-bold uppercase flex items-center justify-center w-full p-3"><span uk-icon="icon: close"></span><span class="ml-6">Close</span></div>
+				<a href="#offcanvas-slide" uk-toggle  class="bg-dawn text-white font-bold uppercase flex items-center justify-center w-full p-3"><span uk-icon="icon: close"></span><span class="ml-2">Close</span></a>
 				<ul class="uk-navbar-nav_override flex flex-col my-8 mx-0 p-0">
 				<?php
 					$menu_name = 'header-menu';
@@ -113,7 +114,7 @@
 						// save this id for later comparison with sub-menu items
 						$parent_id = $item->ID;
 					?>
-					<li class="p-2 mb-2 bg-gray-300 <?php echo check_active_menu($item)?>">
+					<li class="p-2 mb-2 bg-gray-100 <?php echo check_active_menu($item)?>">
 						<a href="<?php echo $link; ?>" class="font-bold text-sm lg:text-base uppercase p-2">
 							<?php echo $title; ?>
 						</a>

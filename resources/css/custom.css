@@ -12096,6 +12096,10 @@ h3 {
     page-break-after: avoid;
   }
 }
+em {
+  color: unset;
+}
+
 a:hover {
   color: unset;
   text-decoration: unset;

@@ -23091,6 +23091,10 @@ video {
   --tw-backdrop-blur: blur(64px);
 }
 
+.backdrop-blur-xs{
+  --tw-backdrop-blur: blur(2.5px);
+}
+
 .backdrop-brightness-0{
   --tw-backdrop-brightness: brightness(0);
 }
@@ -37394,6 +37398,10 @@ h3 {
 h3 {
     page-break-after: avoid;
   }
+}
+
+em {
+  color: unset;
 }
 
 a:hover {
@@ -60135,6 +60143,10 @@ a:hover {
     --tw-backdrop-blur: blur(64px);
   }
 
+  .xs\:backdrop-blur-xs{
+    --tw-backdrop-blur: blur(2.5px);
+  }
+
   .xs\:backdrop-brightness-0{
     --tw-backdrop-brightness: brightness(0);
   }
@@ -82776,6 +82788,10 @@ a:hover {
 
   .sm\:backdrop-blur-3xl{
     --tw-backdrop-blur: blur(64px);
+  }
+
+  .sm\:backdrop-blur-xs{
+    --tw-backdrop-blur: blur(2.5px);
   }
 
   .sm\:backdrop-brightness-0{
@@ -105421,6 +105437,10 @@ a:hover {
     --tw-backdrop-blur: blur(64px);
   }
 
+  .md\:backdrop-blur-xs{
+    --tw-backdrop-blur: blur(2.5px);
+  }
+
   .md\:backdrop-brightness-0{
     --tw-backdrop-brightness: brightness(0);
   }
@@ -128064,6 +128084,10 @@ a:hover {
     --tw-backdrop-blur: blur(64px);
   }
 
+  .lg\:backdrop-blur-xs{
+    --tw-backdrop-blur: blur(2.5px);
+  }
+
   .lg\:backdrop-brightness-0{
     --tw-backdrop-brightness: brightness(0);
   }
@@ -150705,6 +150729,10 @@ a:hover {
 
   .xl\:backdrop-blur-3xl{
     --tw-backdrop-blur: blur(64px);
+  }
+
+  .xl\:backdrop-blur-xs{
+    --tw-backdrop-blur: blur(2.5px);
   }
 
   .xl\:backdrop-brightness-0{
