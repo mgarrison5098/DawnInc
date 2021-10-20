@@ -81,7 +81,10 @@
 						>
 					</a>
 			<?php endif; ?>
-			<h2 class="font-body text-lg text-white uppercase flex-1 text-center lg:text-right m-0">PLANNING, BUILDING, MOVING <u>TOGETHER</u></h2>
+
+			<?php if( get_theme_mod( 'themeslug_footerslogan') ) : ?>
+				<h2 class="font-body text-lg text-white uppercase flex-1 text-center lg:text-right m-0"><?php echo get_theme_mod( 'themeslug_footerslogan' ) ?></h2>
+			<?php endif; ?>
 		</div>
 		<div class="text-center font-body lg:text-right text-white flex-1 justify-self-end">
 				&copy; <?php echo date_i18n( 'Y' );?> - <?php echo get_bloginfo( 'name' );?>

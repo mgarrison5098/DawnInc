@@ -136,6 +136,12 @@ function mytheme_customize_register( $wp_customize ) {
             'settings'  => 'themeslug_footerlogo',
         )
     ));
+	$wp_customize->add_setting( 'themeslug_footerslogan' );
+    $wp_customize->add_control( 'themeslug_footerslogan', array(
+		'label' => __( 'Footer Slogan' ),
+		'type' => 'textarea',
+		'section' => 'themeslug_footerlogo_section',
+	  ) );
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
