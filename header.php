@@ -20,11 +20,11 @@
 	<header>
 		<nav class="uk-navbar-container px-5 " uk-navbar style="background-color: black">
 			<div class="uk-navbar-right text-white">
-				<a href="" class="rounded-full p-1 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600"><span uk-icon="icon: facebook" ></span></a>
-				<a href="" class="rounded-full p-1 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600"><span uk-icon="icon: linkedin" ></span></a>
-				<a href="" class="rounded-full p-1 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600"><span uk-icon="icon: instagram" ></span></a>
-				<a href="" class="rounded-full p-1 px-3 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600"><span uk-icon="icon: receiver"></span>(555) 555-5555</a>
-				<div class="bg-dawn text-white font-bold uppercase flex items-center justify-center h-full p-3 ml-4 hover:bg-dawn-600 cursor-pointer"><span>Subcontractors</span></div>
+				<?php if( get_theme_mod( 'themeslug_facebook') ) : ?><a href="<?php echo esc_url( get_theme_mod( 'themeslug_facebook' ) ); ?>" class="rounded-full p-1 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600" target="_blank"><span uk-icon="icon: facebook" ></span></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_linkedin') ) : ?><a href="<?php echo esc_url( get_theme_mod( 'themeslug_linkedin' ) ); ?>" class="rounded-full p-1 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600" target="_blank"><span uk-icon="icon: linkedin" ></span></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_instagram') ) : ?><a href="<?php echo esc_url( get_theme_mod( 'themeslug_instagram' ) ); ?>" class="rounded-full p-1 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600" target="_blank"><span uk-icon="icon: instagram" ></span></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_phone') ) : ?><a href="tel:<?php echo esc_url( get_theme_mod( 'themeslug_phone' ) ); ?>" class="rounded-full p-1 px-3 m-2 hidden md:flex items-center justify-center bg-dawn text-white no-underline hover:bg-dawn-600"><span uk-icon="icon: receiver"></span><?php echo get_theme_mod( 'themeslug_phone_display' ); ?></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_sub') ) : ?><div onClick="window.open('<?php echo esc_url( get_theme_mod( 'themeslug_sub' ) ); ?>','_newtab');" class="bg-dawn text-white font-bold uppercase flex items-center justify-center h-full p-3 ml-4 hover:bg-dawn-600 cursor-pointer"><span>Subcontractors</span></div><?php endif; ?>
 			</div>
 		</nav>
 		<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; top: 200">

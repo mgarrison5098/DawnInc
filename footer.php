@@ -61,10 +61,10 @@
 		</nav>
 		<nav class="block lg:hidden uk-navbar-container" uk-navbar style="background-color: black">
 			<div class="uk-navbar-center text-white justify-center">
-				<a href="" class="rounded-full p-2 m-2 flex items-center justify-center bg-dawn text-white"><span uk-icon="icon: facebook" ></span></a>
-				<a href="" class="rounded-full p-2 m-2 flex items-center justify-center bg-dawn text-white"><span uk-icon="icon: linkedin" ></span></a>
-				<a href="" class="rounded-full p-2 m-2 flex items-center justify-center bg-dawn text-white"><span uk-icon="icon: instagram" ></span></a>
-				<a href="" class="rounded-full p-2 pr-4 m-2 flex items-center justify-center bg-dawn text-white"><span class="pl-2 pr-3"><span uk-icon="icon: receiver" class="align-text-top"></span></span>(555) 555-5555</a>
+				<?php if( get_theme_mod( 'themeslug_facebook') ) : ?><a href="<?php echo esc_url( get_theme_mod( 'themeslug_facebook' ) ); ?>" class="rounded-full p-2 m-2 flex items-center justify-center bg-dawn text-white" target="_blank"><span uk-icon="icon: facebook" ></span></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_linkedin') ) : ?><a href="<?php echo esc_url( get_theme_mod( 'themeslug_linkedin' ) ); ?>" class="rounded-full p-2 m-2 flex items-center justify-center bg-dawn text-white" target="_blank"><span uk-icon="icon: linkedin" ></span></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_instagram') ) : ?><a href="<?php echo esc_url( get_theme_mod( 'themeslug_instagram' ) ); ?>" class="rounded-full p-2 m-2 flex items-center justify-center bg-dawn text-white" target="_blank"><span uk-icon="icon: instagram" ></span></a><?php endif; ?>
+				<?php if( get_theme_mod( 'themeslug_phone') ) : ?><a href="tel:<?php echo esc_url( get_theme_mod( 'themeslug_phone' ) ); ?>" class="rounded-full p-2 pr-4 m-2 flex items-center justify-center bg-dawn text-white"><span class="pl-2 pr-3"><span uk-icon="icon: receiver" class="align-text-top"></span></span><?php echo get_theme_mod( 'themeslug_phone_display' ); ?></a><?php endif; ?>
 			</div>
 		</nav>
 	</div>

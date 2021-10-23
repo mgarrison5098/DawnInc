@@ -123,6 +123,125 @@ function mytheme_customize_register( $wp_customize ) {
             'settings'  => 'themeslug_logo',
         )
     ));
+
+	$wp_customize->add_panel( 'super_nav_panel', array(
+		'priority'       => 30,
+		 'capability'     => 'edit_theme_options',
+		 'theme_supports' => '',
+		 'title'          => __('Super Nav', 'themeslug'),
+		 'description'    => __('Top navigation bar social media links', 'themeslug'),
+	) );
+
+	$wp_customize->add_section( 'themeslug_sn_fb_section' , array(
+        'title'         => __( 'Facebook', 'themeslug' ),
+        'priority'      => 30,
+        'description'   => '',
+		'panel'  => 'super_nav_panel',
+    ));
+	$wp_customize->add_setting( 'themeslug_facebook' );
+	$wp_customize->add_control( 'show_facebook', array(
+		'label'     => __( 'Show Facebook', 'themeslug' ),
+		'type' => 'checkbox',
+		'settings'  => 'themeslug_facebook',
+		'section'   => 'themeslug_sn_fb_section',
+	) );
+	$wp_customize->add_control( 'facebbok_link', array(
+		'label'     => __( 'Facebook Link', 'themeslug' ),
+		'type' => 'input',
+		'settings'  => 'themeslug_facebook',
+		'section'   => 'themeslug_sn_fb_section',
+	) );
+
+	$wp_customize->add_section( 'themeslug_sn_insta_section' , array(
+        'title'         => __( 'Instagram', 'themeslug' ),
+        'priority'      => 30,
+        'description'   => '',
+		'panel'  => 'super_nav_panel',
+    ));
+	$wp_customize->add_setting( 'themeslug_instagram' );
+	$wp_customize->add_control( 'show_instagram', array(
+		'label'     => __( 'Show Instagram', 'themeslug' ),
+		'type' => 'checkbox',
+		'settings'  => 'themeslug_instagram',
+		'section'   => 'themeslug_sn_insta_section',
+	) );
+	$wp_customize->add_control( 'instagram_link', array(
+		'label'     => __( 'Instagram Link', 'themeslug' ),
+		'type' => 'input',
+		'settings'  => 'themeslug_instagram',
+		'section'   => 'themeslug_sn_insta_section',
+	) );
+
+	$wp_customize->add_section( 'themeslug_sn_linked_section' , array(
+        'title'         => __( 'LinkedIn', 'themeslug' ),
+        'priority'      => 30,
+        'description'   => '',
+		'panel'  => 'super_nav_panel',
+    ));
+	$wp_customize->add_setting( 'themeslug_linkedin' );
+	$wp_customize->add_control( 'show_linkedin', array(
+		'label'     => __( 'Show LinkedIn', 'themeslug' ),
+		'type' => 'checkbox',
+		'settings'  => 'themeslug_linkedin',
+		'section'   => 'themeslug_sn_linked_section',
+	) );
+	$wp_customize->add_control( 'linkedin_link', array(
+		'label'     => __( 'LinkedIn Link', 'themeslug' ),
+		'type' => 'input',
+		'settings'  => 'themeslug_linkedin',
+		'section'   => 'themeslug_sn_linked_section',
+	) );
+
+	$wp_customize->add_section( 'themeslug_sn_phone_section' , array(
+        'title'         => __( 'Phone', 'themeslug' ),
+        'priority'      => 30,
+        'description'   => '',
+		'panel'  => 'super_nav_panel',
+    ));
+	$wp_customize->add_setting( 'themeslug_phone' );
+	$wp_customize->add_setting( 'themeslug_phone_display' );
+	$wp_customize->add_control( 'show_phone', array(
+		'label'     => __( 'Show Phone Number', 'themeslug' ),
+		'type' => 'checkbox',
+		'settings'  => 'themeslug_phone',
+		'section'   => 'themeslug_sn_phone_section',
+	) );
+	$wp_customize->add_control( 'phone_link', array(
+		'label'     => __( 'Phone Number', 'themeslug' ),
+		'type' => 'input',
+		'settings'  => 'themeslug_phone',
+		'section'   => 'themeslug_sn_phone_section',
+	) );
+	$wp_customize->add_control( 'phone_display', array(
+		'label'     => __( 'Display Text', 'themeslug' ),
+		'type' => 'input',
+		'settings'  => 'themeslug_phone_display',
+		'section'   => 'themeslug_sn_phone_section',
+	) );
+
+	$wp_customize->add_section( 'themeslug_sn_sub_section' , array(
+        'title'         => __( 'Subcontractor', 'themeslug' ),
+        'priority'      => 30,
+        'description'   => '',
+		'panel'  => 'super_nav_panel',
+    ));
+	$wp_customize->add_setting( 'themeslug_sub' );
+	$wp_customize->add_control( 'show_sub', array(
+		'label'     => __( 'Show Subcontractor', 'themeslug' ),
+		'type' => 'checkbox',
+		'settings'  => 'themeslug_sub',
+		'section'   => 'themeslug_sn_sub_section',
+	) );
+	$wp_customize->add_control( 'sub_link', array(
+		'label'     => __( 'Subcontractor', 'themeslug' ),
+		'type' => 'input',
+		'settings'  => 'themeslug_sub',
+		'section'   => 'themeslug_sn_sub_section',
+	) );
+    
+	
+
+
 	$wp_customize->add_section( 'themeslug_footerlogo_section' , array(
         'title'         => __( 'Footer Logo', 'themeslug' ),
         'priority'      => 30,
